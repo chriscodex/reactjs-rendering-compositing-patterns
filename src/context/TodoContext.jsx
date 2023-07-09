@@ -1,7 +1,7 @@
-import React from 'react';
+import { createContext, useState } from 'react';
 import { useLocalStorage } from '../customHooks/useLocalStorage';
 
-const TodoContext = React.createContext();
+const TodoContext = createContext();
 
 function TodoProvider({ children }) {
   const {
@@ -10,10 +10,10 @@ function TodoProvider({ children }) {
     loading,
     error,
   } = useLocalStorage('TODOS_V1', []);
-  const [searchValue, setSearchValue] = React.useState('');
+  const [searchValue, setSearchValue] = useState('');
 
   // Estado para el modal
-  const [openModal, setOpenModal] = React.useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   // Contador de todos completados
   const completedTodos = todos.filter((todo) => todo.completed).length;

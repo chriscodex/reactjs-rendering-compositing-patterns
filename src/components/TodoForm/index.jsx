@@ -1,13 +1,13 @@
-import React from 'react';
 import { Modal, Box } from '@mui/material';
 import { TodoContext } from '../../context/TodoContext';
 import './TodoForm.css';
+import { useContext, useState } from 'react';
 
 function TodoForm({ children }) {
-  const { openModal, setOpenModal, addTodo } = React.useContext(TodoContext);
+  const { openModal, setOpenModal, addTodo } = useContext(TodoContext);
 
   /* Eventos del nuevo to-do */
-  const [newTodoValue, setNewTodoValue] = React.useState('');
+  const [newTodoValue, setNewTodoValue] = useState('');
 
   const onChange = (event) => {
     setNewTodoValue(event.target.value);

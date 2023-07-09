@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext } from 'react';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
 import { TodoList } from '../components/TodoList';
@@ -14,7 +14,7 @@ import { TodoContext } from '../context/TodoContext';
 
 function AppUI() {
   const { loading, error, searchedTodos, onComplete, onDelete, openModal } =
-    React.useContext(TodoContext);
+    useContext(TodoContext);
 
   return (
     <>

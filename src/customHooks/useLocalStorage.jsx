@@ -1,13 +1,13 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 function useLocalStorage(itemName, initialValue) {
-  const [item, setItem] = React.useState(initialValue)
+  const [item, setItem] = useState(initialValue)
   
-  const [loading, setLoading] = React.useState(true)
+  const [loading, setLoading] = useState(true)
   
-  const [error, setError] = React.useState(false)
+  const [error, setError] = useState(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       try {
         const localStorageItem = localStorage.getItem(itemName)
