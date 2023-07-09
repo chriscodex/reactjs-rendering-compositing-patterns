@@ -1,11 +1,8 @@
+import { useState } from 'react';
 import { Modal, Box } from '@mui/material';
-import { TodoContext } from '../../context/TodoContext';
 import './TodoForm.css';
-import { useContext, useState } from 'react';
 
-function TodoForm({ children }) {
-  const { openModal, setOpenModal, addTodo } = useContext(TodoContext);
-
+function TodoForm({ openModal, setOpenModal, addTodo }) {
   /* Eventos del nuevo to-do */
   const [newTodoValue, setNewTodoValue] = useState('');
 
