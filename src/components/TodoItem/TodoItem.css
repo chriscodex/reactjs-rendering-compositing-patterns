@@ -1,0 +1,56 @@
+.TodoItem {
+  background-color: #FAFAFA;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+}
+
+.TodoItem-p {
+  margin: 24px 0 24px 24px;
+  width: calc(100% - 120px);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.TodoItem-p--complete {
+  text-decoration: line-through;
+}
+
+/* Check styles */
+.Icon-check {
+  background: url("./assets/circle.svg") no-repeat;
+  background-size: 90%;
+  background-position: center center;
+  width: 2.5em;
+  height: 2.5em;
+  border: none;
+  cursor: pointer;
+}
+.Icon-check--active {
+  background: url("./assets/circle-check.svg") no-repeat;
+  background-size: 90%;
+  background-position: center center;
+  width: 2.5em;
+  height: 2.5em;
+  border: none;
+  cursor: pointer;
+}
+
+/* Delete styles */
+.Icon-delete {
+  background: url("./assets/x.svg") no-repeat;
+  background-size: 90%;
+  background-position: center center;
+  width: 1.2em;
+  height: 1.2em;
+  border: none;
+  cursor: pointer;
+}
+.Icon-delete:hover {
+  background: url("./assets/x-red.svg") no-repeat;
+  background-size: 90%;
+  background-position: center center;
+}
