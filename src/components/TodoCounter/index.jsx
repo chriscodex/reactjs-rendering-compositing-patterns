@@ -4,7 +4,7 @@ function TodoCounter({ totalTodos, completedTodos, loading }) {
   
   let content;
   if (loading) {
-    content = <h1 className='TodoCounter'>Cargando To-Do&apos;s</h1>;
+    content = <h1 className={'TodoCounter TodoCounter__loading'}>Cargando To-Do&apos;s</h1>;
   } else if (completedTodos===0 && completedTodos === totalTodos) {
     content = <h1 className='TodoCounter'>Crea tu primer To-Do</h1>;
   } else if (completedTodos!==0 && completedTodos === totalTodos) {
