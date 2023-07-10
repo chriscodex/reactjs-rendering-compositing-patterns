@@ -1,11 +1,17 @@
-import './styles.css'
+import { Children, cloneElement } from 'react';
+import './styles.css';
 
-function TodoHeader({ children }) {
+function TodoHeader({ children, loading }) {
+
   return (
     <header>
-      {children}
+      {Children.toArray(children).map((child) => {
+        return cloneElement(child, {
+          loading: loading,
+        });
+      })}
     </header>
-  )
+  );
 }
 
-export { TodoHeader }
+export { TodoHeader };
