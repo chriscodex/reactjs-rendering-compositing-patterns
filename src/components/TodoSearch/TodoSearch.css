@@ -34,3 +34,7 @@
   top: 0.7em;
   right: 4.2em;
 }
+
+.TodoSearch:disabled {
+  opacity: 50%;
+}
