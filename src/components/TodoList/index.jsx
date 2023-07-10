@@ -3,22 +3,22 @@ import './TodoList.css';
 function TodoList({
   error,
   loading,
+  totalTodos,
+  searchText,
   searchedTodos,
   onLoading,
   onError,
   onEmpty,
-  renderItem,
+  onEmptySearchResult,
   children,
 }) {
   return (
     <section className="TodoList-container">
-    {error && onError()}
+      {error && onError()}
       {loading && onLoading()}
-      {(!loading && searchedTodos.length === 0) && onEmpty()}
-      {searchedTodos.map((todo) => (
-        renderItem(todo)
-      ))} 
-      <ul>{children}</ul>
+      {(!loading && !totalTodos) && onEmpty()}
+      {(!!totalTodos && !searchedTodos.length) && onEmptySearchResult(searchText)}
+      {totalTodos !==0 && searchedTodos.map((todo) => children(todo))}
     </section>
   );
 }
