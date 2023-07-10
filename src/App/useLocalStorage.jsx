@@ -28,7 +28,7 @@ function useLocalStorage(itemName, initialValue) {
         setError(true)
       }
     }, 1500);
-  }, [initialValue, itemName])
+  }, [])
 
   /* Actualiza el estado de los todos y los guarda en local storage */
   const saveItem = (newItem) => {
