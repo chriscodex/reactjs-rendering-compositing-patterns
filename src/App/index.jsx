@@ -11,6 +11,7 @@ import { EmptySearchResult } from '../components/EmptySearch';
 import { Modal } from '../components/Modal';
 import { TodoForm } from '../components/TodoForm';
 import { useTodos } from './useTodos';
+import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
 
 function App() {
   const {
@@ -75,6 +76,8 @@ function App() {
           ></TodoForm>
         </Modal>
       )}
+
+      <ChangeAlertWithStorageListener />
     </>
   );
 }
