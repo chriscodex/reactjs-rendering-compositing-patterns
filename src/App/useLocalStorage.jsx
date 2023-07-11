@@ -7,6 +7,8 @@ function useLocalStorage(itemName, initialValue) {
   
   const [error, setError] = useState(false)
 
+  const [sincronizedItem, setSincronizedItem] = useState(true)
+
   useEffect(() => {
     setTimeout(() => {
       try {
@@ -23,12 +25,14 @@ function useLocalStorage(itemName, initialValue) {
         }
   
         setLoading(false)
+
+        setSincronizedItem(true)
       } catch (error) {
         setLoading(false)
         setError(true)
       }
     }, 1500);
-  }, [])
+  }, [sincronizedItem])
 
   /* Actualiza el estado de los todos y los guarda en local storage */
   const saveItem = (newItem) => {
@@ -36,11 +40,17 @@ function useLocalStorage(itemName, initialValue) {
     setItem(newItem)
   }
 
+  const sincronizeItem = () => {
+    setLoading(true)
+    setSincronizedItem(false)
+  }
+
   return {
     item, 
     saveItem,
     loading,
-    error
+    error,
+    sincronizeItem
   }
 }
 
